@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+</head>
+<body>
+    <input type="text" id="contName">
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+    <p id="list"></p>
+</body>
+<script>
+  var contacts = [];
+
+function display() {
+  var output = "";
+  for (var l = 0; l < contacts.length; l++) {
+    output += contacts[l] + " ";
+  }
+  document.getElementById("list").innerHTML = output;
+}
+
+function add() {
+  var name = document.getElementById("contName").value;
+  if (name != "") {
+    contacts.push(name);
+    if (contacts.length > 7) {
+      contacts.shift();
+    }
+    display();
+    document.getElementById("contName").value = "";
+  }
+}
+
+function remove() {
+  if (contacts.length > 0) {
+    contacts.pop();
+    display();
+  }
+}
+</script>
+
+</script>
+</html>

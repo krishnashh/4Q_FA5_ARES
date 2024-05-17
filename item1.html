@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Shape</title>
+</head>
+<body>
+    <script>
+         var input;
+        do {
+          input = prompt("Please enter a number:");
+        } while (isNaN(input) || input == "" || input == null);
+
+        var value = parseInt(input);
+        var output = "Number inputted: " + value + "<br>";
+        
+        if (value % 2 == 0) {
+          for (var x = value; x >= 1; x--) {
+            for (var y = x; y >= 1; y--) {
+              output += x + " ";
+            }
+            output += "<br>";
+          }
+        } else {
+          for (var x = value; x >= 1; x--) {
+            for (var y = value; y >= 1; y--) {
+              output += x + " ";
+            }
+            output += "<br>";
+          }
+        }
+        
+        document.write(output);
+
+      
+    </script>
